@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepAuto</title>
+    <link rel="icon" type="image/png" href="https://framerusercontent.com/images/1lAN9xhmbHiExl09sFdtcarQs.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container-fluid py-4">
+        <!-- Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+        
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="mb-0">
+                    <img src="https://framerusercontent.com/images/1lAN9xhmbHiExl09sFdtcarQs.png" alt="DeepAuto QA" class="logo-icon">
+                    DeepAuto QA
+                </h5>
+                <button class="hamburger-btn" id="close-sidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>            
+            <button id="clear-chat" class="btn w-100 mt-3 clear-chat-btn" style="color:#000;">
+                <i class="fas fa-trash me-2"></i> Clear Conversation
+            </button>
+        </div>
+        
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <div class="chat-header">
+                <div>
+                    <h5 class="mb-0">
+                        <img src="https://framerusercontent.com/images/1lAN9xhmbHiExl09sFdtcarQs.png" alt="DeepAuto QA" class="logo-icon">
+                        DeepAuto QA
+                    </h5>
+                </div>
+                <button class="hamburger-btn" id="open-sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <div id="chat-body" class="chat-body">
+                <div class="message assistant-message">
+                    <div class="agent-tag">System</div>
+                    <p>안녕하세요! DeepAuto QA 입니다. 질문을 하거나 문서를 업로드하여 분석할 수 있습니다.</p>
+                </div>
+            </div>
+            
+            <div class="chat-footer">
+                <form id="chat-form" class="d-flex align-items-end">
+                    <div class="file-upload-container me-2">
+                        <button type="button" class="btn rounded-circle upload-btn">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <input type="file" class="file-upload-input" id="pdf-upload" accept="application/pdf">
+                    </div>
+                    
+                    <div class="flex-grow-1">
+                        <div class="preview-container" id="preview-container">
+                            <div class="d-flex align-items-center mb-2">
+                                <span id="preview-pdf-name"></span>
+                                <button type="button" class="btn btn-sm btn-outline-danger" id="remove-pdf">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <textarea id="message-input" class="form-control message-input" rows="1" placeholder="질문을 입력하세요..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn rounded-circle ms-2 send-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.2/marked.min.js"></script>
+    <script src="/static/js/chat.js"></script>
+</body>
+</html> 
